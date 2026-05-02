@@ -114,7 +114,9 @@ public class Worker {
 	private String worker_certificates;
 
 	private String worker_education;
-
+	
+	private double worker_fees;
+		
 	private String worker_status;
 
 	@JsonIgnore

@@ -4,6 +4,7 @@ import com.fixOnGo.backend.entity.ServiceCategory;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -54,6 +55,10 @@ public class WorkerProfile {
 	private String worker_certificates;
 
 	private String worker_education;
+	
+	@NotNull
+	@Min(value = 100, message = "Minimum Price is 100")
+	private double worker_fees;
 
 	private String worker_status;
 }

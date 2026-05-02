@@ -18,9 +18,6 @@ public class ServicesDao {
 	@Size(min = 20, message = "Service Description Must In 20 To 100 Charecters")
 	private String service_Description;
 
-	@Min(value = 100, message = "Minimum Price is 100")
-	private int service_price;
-
 	private ServiceCategory serviceCategory;
 
 	private String service_img;

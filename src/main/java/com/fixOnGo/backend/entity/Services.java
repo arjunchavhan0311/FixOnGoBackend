@@ -41,9 +41,6 @@ public class Services {
 
 	private String service_img;
 
-	@Column(nullable = false)
-	private int service_price;
-
 	private int service_rating;
 
 	private int total_worker;
