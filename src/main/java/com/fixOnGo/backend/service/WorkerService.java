@@ -174,7 +174,7 @@ public class WorkerService {
 
 		Worker worker = workerRepo.findByEmail(request.getEmail());
 		if (worker == null)
-			throw new ResourceNotFoundException("Admin", "Email", request.getEmail());
+			throw new ResourceNotFoundException("Worker", "Email", request.getEmail());
 
 		if (worker.getResetToken() == null || !worker.getResetToken().equals(request.getResetToken())) {
 			throw new ResourceAlreadyExistException("Invalid OTP ", null, null);

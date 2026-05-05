@@ -132,7 +132,7 @@ public class CustomerService {
 
 		Customer customer = customerRepo.findByEmail(request.getEmail());
 		if (customer == null)
-			throw new ResourceNotFoundException("Admin", "Email", request.getEmail());
+			throw new ResourceNotFoundException("Customer", "Email", request.getEmail());
 
 		if (customer.getResetToken() == null || !customer.getResetToken().equals(request.getResetToken())) {
 			throw new ResourceAlreadyExistException("Invalid OTP", null, null);

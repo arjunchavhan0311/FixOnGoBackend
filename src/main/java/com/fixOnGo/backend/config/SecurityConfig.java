@@ -68,7 +68,7 @@ public class SecurityConfig {
 						.permitAll()
 
 						.requestMatchers("/api/worker/signup", "/api/worker/login", "/api/worker/forgot-password",
-								"/api/worke/reset-password")
+								"/api/worker/reset-password")
 						.permitAll().requestMatchers("/api/worker/login").permitAll()
 						.requestMatchers("/worker/set-password/**").permitAll()
 
@@ -76,12 +76,19 @@ public class SecurityConfig {
 								"/api/customer/reset-password", "/api/customer/show/service", "/error")
 						.permitAll()
 
+						// ✅ MAKE FEEDBACK PUBLIC
+						.requestMatchers(
+						    "/api/feedback/service-rating/**",
+						    "/api/feedback/worker-rating/**"
+						).permitAll()
+						
 						.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
 
 						.requestMatchers("/uploads/**").permitAll()
 						
 						.requestMatchers("/ws/**").permitAll()
 						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+						
 
 						// ---------- 🔥 SPECIFIC FIRST (VERY IMPORTANT) ----------
 						.requestMatchers("/api/admin/worker/workload-summary").hasRole("ADMIN")
