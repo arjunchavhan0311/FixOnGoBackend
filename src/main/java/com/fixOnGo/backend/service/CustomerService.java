@@ -108,7 +108,7 @@ public class CustomerService {
 
 		Customer customer = customerRepo.findByEmail(request.getEmail());
 		if (customer == null) {
-			throw new ResourceNotFoundException("Admin", "Email", request.getEmail());
+			throw new ResourceNotFoundException("Customer", "Email", request.getEmail());
 		}
 
 		String otp = String.format("%06d", (int) (Math.random() * 900000 + 100000));

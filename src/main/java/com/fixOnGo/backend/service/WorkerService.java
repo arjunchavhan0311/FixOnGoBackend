@@ -150,7 +150,7 @@ public class WorkerService {
 
 		Worker worker = workerRepo.findByEmail(request.getEmail());
 		if (worker == null) {
-			throw new ResourceNotFoundException("Admin", "Email", request.getEmail());
+			throw new ResourceNotFoundException("Worker", "Email", request.getEmail());
 		}
 
 		String otp = String.format("%06d", (int) (Math.random() * 900000 + 100000));
